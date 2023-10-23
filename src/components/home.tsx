@@ -20,7 +20,7 @@ const blogFirstPostDate = Object.values(posts).length > 0 ? Object.values(posts)
 const startYear = blogFirstPostDate ? new Date(blogFirstPostDate).getFullYear() : null;
 
 export const Home = () => {
-    return <div className="h-full w-full bg-[#111827]">
+    return <>
         <header className="w-4/6 container mx-auto mb-5">
             <Title>{blog.title}</Title>
         </header>
@@ -32,5 +32,5 @@ export const Home = () => {
         <footer className="w-4/6 container mx-auto mb-5">
             <Paragraph>&copy; {(blogFirstPostDate && startYear !== new Date().getFullYear()) && startYear + ' - '} {new Date().getFullYear()} {blog.title}</Paragraph>
         </footer>
-    </div>;
+    </>;
 };

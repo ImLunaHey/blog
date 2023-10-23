@@ -15,7 +15,7 @@ const App: React.FC<PropsWithChildren> = ({ children }) => <html lang={blog.lang
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://cdn.tailwindcss.com" />
     </head>
-    <body>
+    <body className="h-full w-full bg-[#111827]">
         {children}
     </body>
 </html>;
