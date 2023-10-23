@@ -7,7 +7,7 @@ import { NotFound } from './not-found';
 import { logger } from './logger';
 import { blog } from './config';
 
-const App: React.FC<PropsWithChildren> = ({ children }) => <html>
+const App: React.FC<PropsWithChildren> = ({ children }) => <html lang={blog.language}>
     <head>
         <title>{blog.title}</title>
         <meta name="description" content={blog.description} />
