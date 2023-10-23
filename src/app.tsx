@@ -1,10 +1,10 @@
 import React, { PropsWithChildren } from 'react';
 import { Application } from 'xirelta';
-import { Logger } from '@imlunahey/logger';
 import { Home } from './components/home';
 import { posts } from './posts';
 import { Post } from './components/post';
 import { NotFound } from './not-found';
+import { logger } from './logger';
 
 const App: React.FC<PropsWithChildren> = ({ children }) => <html>
     <head>
@@ -19,9 +19,7 @@ const App: React.FC<PropsWithChildren> = ({ children }) => <html>
 </html>;
 
 export const app = new Application({
-    logger: new Logger({
-        service: 'blog',
-    }),
+    logger,
 });
 
 app.get('/', () => <App><Home /></App>);
