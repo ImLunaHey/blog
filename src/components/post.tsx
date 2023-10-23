@@ -1,32 +1,5 @@
-import { PropsWithChildren } from "react";
-import Markdown from "react-markdown";
-import rehypeRaw from 'rehype-raw';
-
-const Title: React.FC<PropsWithChildren> = ({ children }) => {
-    return <h1 className="text-4xl font-extrabold text-white">{children}</h1>;
-};
-
-const Link: React.FC<PropsWithChildren<{ href?: string; colour?: 'red' | 'indigo' | 'green' }>> = ({ href, children, colour = 'indigo' }) => {
-    return <a href={href} className={`font-semibold text-gray-900 underline dark:text-white decoration-${colour}-500`}>{children}</a>
-};
-
-const Paragraph: React.FC<PropsWithChildren> = ({ children }) => {
-    return <p className="text-gray-500 dark:text-gray-400">{children}</p>;
-};
-
-const Content: React.FC<{ children: string; }> = ({ children }) => {
-    return <Markdown
-        components={{
-            a({ node, ...props }) {
-                return <Link {...props} />
-            },
-            p({ node, ...props }) {
-                return <Paragraph {...props} />
-            }
-        }}
-        rehypePlugins={[rehypeRaw]}
-    >{children}</Markdown>;
-};
+import { Title } from "./title";
+import { Content } from "./content";
 
 export type PostProps = {
     title: string;

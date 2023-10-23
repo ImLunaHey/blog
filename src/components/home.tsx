@@ -1,12 +1,26 @@
+import { blog } from "../config";
 import { posts } from "../posts";
+import { Link } from "./link";
+import { Paragraph } from "./paragraph";
+import { Title } from "./title";
 
-export const Home = () => <div>
-    <h1 className="text-3xl font-bold underline text-clifford">
-        My blog
-    </h1>
-    <ul>
-        {Object.values(posts).map((post) => <li>
-            <a href={`/posts/${post.slug}`}>{post.title}</a>
-        </li>)}
-    </ul>
-</div>;
+const articles = Object.values(posts)
+    .filter(post => !post.draft)
+    .sort((a, b) => {
+        return a.publishedDate > b.publishedDate ? -1 : 1;
+    })
+    .map(post => <article className="w-4/6 container mx-auto">
+        <Link><Title size={5}>{post.title}</Title></Link>
+    </article>);
+
+export const Home = () => {
+    return <div className="h-full w-full bg-[#111827]">
+        <header className="w-4/6 container mx-auto mb-5">
+            <Title>{blog.title}</Title>
+        </header>
+
+        <main className="w-4/6 container mx-auto mb-5">
+            {articles.length > 0 ? articles : <Paragraph>No posts yet.</Paragraph>}
+        </main>
+    </div>;
+};

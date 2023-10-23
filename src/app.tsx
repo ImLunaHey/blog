@@ -5,10 +5,12 @@ import { posts } from './posts';
 import { Post } from './components/post';
 import { NotFound } from './not-found';
 import { logger } from './logger';
+import { blog } from './config';
 
 const App: React.FC<PropsWithChildren> = ({ children }) => <html>
     <head>
-        <title>My Blog</title>
+        <title>{blog.title}</title>
+        <meta name="description" content={blog.description} />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://cdn.tailwindcss.com" />
