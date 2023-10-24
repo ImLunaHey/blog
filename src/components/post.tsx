@@ -1,5 +1,7 @@
 import { Title } from "./title";
 import { Content } from "./content";
+import { Paragraph } from "./paragraph";
+import { blog } from "../config";
 
 export type PostProps = {
     title: string;
@@ -16,9 +18,16 @@ export type PostProps = {
 
 export const Post: React.FC<PostProps> = (post) => {
     return <>
-        <main className="h-full w-full bg-[#111827]">
-            <article className="w-4/6 container mx-auto">
-                <Title>{post.title}</Title>
+        <main className="h-full w-full" style={{
+            viewTransitionName: 'main',
+        }}>
+            <article className="container mx-auto">
+                <Title size={3}>{post.title}</Title>
+                <Paragraph>{new Date(post.publishedDate).toLocaleDateString(blog.language, {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                })}</Paragraph>
                 <Content>{post.content}</Content>
             </article>
         </main>
