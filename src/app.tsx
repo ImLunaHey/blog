@@ -30,7 +30,6 @@ const App: React.FC<PropsWithChildren> = ({ children }) => (
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="view-transition" content="same-origin" />
       <script src="https://cdn.tailwindcss.com" />
-      <script src="https://fish.lgbt/assets/js/htmx.org@1.9.4.min.js"></script>
       <style>{`
         p + p {
           margin-top:10px;
@@ -64,6 +63,7 @@ const App: React.FC<PropsWithChildren> = ({ children }) => (
         />
       </footer>
     </body>
+    <script src="https://fish.lgbt/assets/js/htmx.org@1.9.4.min.js"></script>
   </html>
 );
 
