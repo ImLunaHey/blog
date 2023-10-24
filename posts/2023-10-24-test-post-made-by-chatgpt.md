@@ -17,7 +17,7 @@ tags:
 categories: []
 ---
 
-### Why TypeScript is a Game Changer for JavaScript Developers
+<notice>This was written by ChatGPT</notice>
 
 In the dynamic landscape of web development, JavaScript has long been the reigning monarch. It has enabled developers to build interactive and complex client-side web applications. However, as applications grow in complexity, managing JavaScript code can become a daunting task. Enter TypeScript: a superset of JavaScript that addresses many of these challenges. In this blog post, we'll explore why TypeScript is a game-changer for JavaScript developers.
 

@@ -3,6 +3,8 @@ import rehypeRaw from 'rehype-raw';
 import { Link } from './link';
 import { Paragraph } from './paragraph';
 import { Code } from './code';
+import { Notice } from './notice';
+import { Title } from './title';
 
 export const Content: React.FC<{ children: string }> = ({ children }) => {
     return (
@@ -16,6 +18,28 @@ export const Content: React.FC<{ children: string }> = ({ children }) => {
                 },
                 code(props) {
                     return <Code {...props} />;
+                },
+                h1({ node, ...props }) {
+                    return <Title size={1} {...props} />;
+                },
+                h2({ node, ...props }) {
+                    return <Title size={2} {...props} />;
+                },
+                h3({ node, ...props }) {
+                    return <Title size={3} {...props} />;
+                },
+                h4({ node, ...props }) {
+                    return <Title size={4} {...props} />;
+                },
+                h5({ node, ...props }) {
+                    return <Title size={5} {...props} />;
+                },
+                h6({ node, ...props }) {
+                    return <Title size={6} {...props} />;
+                },
+                // @ts-expect-error
+                notice({ node, ...props }) {
+                    return <Notice {...props} />;
                 }
             }}
             rehypePlugins={[rehypeRaw]}

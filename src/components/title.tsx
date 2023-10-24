@@ -12,5 +12,5 @@ const sizeToInverse = {
 export const Title: React.FC<PropsWithChildren<{
     size?: 1 | 2 | 3 | 4 | 5 | 6;
 }>> = ({ children, size = 1 }) => {
-    return createElement(`h${size}`, { className: `text-${sizeToInverse[size]}xl font-extrabold text-white` }, children);
+    return createElement(`h${size}`, { className: `text-${sizeToInverse[size]}xl font-extrabold text-white mt-5` }, children);
 };
