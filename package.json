@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "bun --watch run src/index.tsx",
-    "start": "bun --revision && bun run src/index.tsx"
+    "start": "bun --revision && bun --smol run src/index.tsx"
   },
   "devDependencies": {
     "@types/node": "^20.8.7",
