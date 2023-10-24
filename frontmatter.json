@@ -67,7 +67,7 @@
           "title": "authors",
           "name": "authors",
           "type": "choice",
-          "default": "ImLunaHey",
+          "default": "[ImLunaHey]",
           "choices": [
             "ImLunaHey",
             "chatGPT"
