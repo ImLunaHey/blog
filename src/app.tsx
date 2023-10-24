@@ -15,8 +15,8 @@ import { resolve } from 'path';
 const blogFirstPostDate =
   Object.values(posts).length > 0
     ? Object.values(posts).sort((a, b) => {
-      return a.publishedDate > b.publishedDate ? 1 : -1;
-    })[0].publishedDate
+        return a.publishedDate > b.publishedDate ? 1 : -1;
+      })[0].publishedDate
     : null;
 
 const startYear = blogFirstPostDate ? new Date(blogFirstPostDate).getFullYear() : null;
@@ -33,6 +33,10 @@ const App: React.FC<PropsWithChildren> = ({ children }) => (
       <style>{`
         p + p {
           margin-top:10px;
+        }
+        img{
+          width: 100%;
+          height: auto;
         }
       `}</style>
     </head>
@@ -78,10 +82,7 @@ app.get('/', () => (
 ));
 
 app.get('/robots.txt', () => {
-  return new Response(`
-    User-agent: *
-    Allow /
-  `, {
+  return new Response(`User-agent: *\nAllow /`, {
     headers: {
       'content-type': 'text/plain',
     },
@@ -120,5 +121,11 @@ app.get('/assets/:type/:fileName', async ({ params: { type, fileName } }) => {
       </App>
     );
 
-  return new Response(Bun.file(filePath));
+  const file = Bun.file(filePath);
+  return new Response(file, {
+    headers: {
+      'content-type': file.type,
+      'cache-control': 'public, max-age=31536000, immutable',
+    },
+  });
 });

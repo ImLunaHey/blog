@@ -5,7 +5,7 @@ description: ''
 published_date: 2023-10-24T05:13:43.886Z
 created_date: 2023-10-24T05:13:43.887Z
 modified_date: 2023-10-24T05:13:43.887Z
-preview: /assets/images/ct-logs-dashboard-screenshot.png
+preview: /assets/images/ct-logs-dashboard-screenshot.webp
 draft: false
 tags: []
 categories: []
@@ -24,7 +24,7 @@ Hey folks, today we're diving into something that I've been geeking out about—
 
 And the list goes on. With ct-logs, I can not only monitor these things but also plot them on a graph, because who doesn't love a good visualization?
 
-![ct-logs dashboard on [axiom.co](https://axiom.co)](/assets/images/ct-logs-dashboard-screenshot.png)
+![ct-logs dashboard on [axiom.co](https://axiom.co)](/assets/images/ct-logs-dashboard-screenshot.webp)
 
 ## A Shoutout to axiom.co (and a Disclaimer)
 
