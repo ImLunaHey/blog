@@ -25,7 +25,7 @@ export const Post: React.FC<PostProps> = (post) => {
       <head>
         <meta property="og:image" content={post.preview} />
       </head>
-      <main
+      <div
         className="h-full w-full"
         style={{
           viewTransitionName: 'main',
@@ -42,7 +42,7 @@ export const Post: React.FC<PostProps> = (post) => {
           </div>
           <Content>{post.content}</Content>
         </article>
-      </main>
+      </div>
     </>
   );
 };
