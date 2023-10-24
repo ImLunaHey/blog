@@ -34,7 +34,7 @@ const App: React.FC<PropsWithChildren> = ({ children }) => (
       <style>{`
         p + p {
           margin-top:10px;
-        }        
+        }
       `}</style>
     </head>
     <body className="h-full w-full bg-[#0e0c15]">
@@ -56,6 +56,7 @@ const App: React.FC<PropsWithChildren> = ({ children }) => (
           &copy; {blogFirstPostDate && startYear !== new Date().getFullYear() && startYear + ' - '}{' '}
           {new Date().getFullYear()} {blog.title}
         </Text>
+        <img src="https://v.fish.lgbt/pixel.gif?id=blog.fish.lgbt" />
       </footer>
     </body>
   </html>
