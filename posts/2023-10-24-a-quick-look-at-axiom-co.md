@@ -1,5 +1,5 @@
 ---
-title: A Quick Look at Axiom.co
+title: A Quick Look at axiom.co
 slug: 'a-quick-look-at-axiom-co'
 description: ''
 published_date: 2023-10-24T03:13:10.330Z

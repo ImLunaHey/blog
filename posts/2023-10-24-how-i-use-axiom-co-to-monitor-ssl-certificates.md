@@ -1,5 +1,5 @@
 ---
-title: How I Use Axiom.co to Monitor SSL Certificates
+title: How I Use axiom.co to Monitor SSL Certificates
 slug: how-i-use-axiom-co-to-monitor-ssl-certificates
 description: ''
 published_date: 2023-10-24T05:13:43.886Z
@@ -26,9 +26,9 @@ And the list goes on. With ct-logs, I can not only monitor these things but also
 
 ![ct-logs dashboard on [axiom.co](https://axiom.co)](/assets/images/ct-logs-dashboard-screenshot.png)
 
-## A Shoutout to Axiom.co (and a Disclaimer)
+## A Shoutout to axiom.co (and a Disclaimer)
 
-Before we get too deep, let me just say [Axiom.co](https://axiom.co) has been a breeze to work with. The platform makes it super simple to analyze the tons of data that ct-logs collects. A quick disclaimer: I work at [Axiom.co](https://axiom.co), but that doesn't make my love for the platform any less genuine!
+Before we get too deep, let me just say [axiom.co](https://axiom.co) has been a breeze to work with. The platform makes it super simple to analyze the tons of data that ct-logs collects. A quick disclaimer: I work at [axiom.co](https://axiom.co), but that doesn't make my love for the platform any less genuine!
 
 ## The Technical Nitty-Gritty
 
@@ -56,4 +56,4 @@ I've got heaps of ideas for what I can do with this data, from analyzing interne
 
 ## Wrapping Up
 
-So that's a quick dive into how I'm using Axiom.co](https://axiom.co) and ct-logs to keep tabs on the ever-changing world of SSL certificates. If you're as curious as I am, check out the [ct-logs GitHub repo](https://github.com/imlunahey/ct-logs). It's MIT-licensed, so feel free to mess around with it.
+So that's a quick dive into how I'm using [axiom.co](https://axiom.co) and ct-logs to keep tabs on the ever-changing world of SSL certificates. If you're as curious as I am, check out the [ct-logs GitHub repo](https://github.com/imlunahey/ct-logs). It's MIT-licensed, so feel free to mess around with it.
