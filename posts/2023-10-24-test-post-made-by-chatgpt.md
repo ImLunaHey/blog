@@ -15,9 +15,9 @@ tags:
   - oop
   - web development
 categories: []
+authors:
+  - chatGPT
 ---
-
-<notice>This was written by ChatGPT</notice>
 
 ### Intro
 
