@@ -15,8 +15,8 @@ import { resolve } from 'path';
 const blogFirstPostDate =
   Object.values(posts).length > 0
     ? Object.values(posts).sort((a, b) => {
-        return a.publishedDate > b.publishedDate ? 1 : -1;
-      })[0].publishedDate
+      return a.publishedDate > b.publishedDate ? 1 : -1;
+    })[0].publishedDate
     : null;
 
 const startYear = blogFirstPostDate ? new Date(blogFirstPostDate).getFullYear() : null;
@@ -39,7 +39,7 @@ const App: React.FC<PropsWithChildren> = ({ children }) => (
     </head>
     <body className="h-full w-full bg-[#0e0c15]">
       <header
-        className="w-4/6 container mx-auto mb-5"
+        className="sm:w-4/6 w-5/6 container mx-auto mb-5"
         style={{
           viewTransitionName: 'main',
         }}
@@ -49,9 +49,9 @@ const App: React.FC<PropsWithChildren> = ({ children }) => (
         </Link>
       </header>
 
-      <main className="w-4/6 container mx-auto mb-5">{children}</main>
+      <main className="sm:w-4/6 w-5/6 container mx-auto mb-5">{children}</main>
 
-      <footer className="w-4/6 container mx-auto mb-5">
+      <footer className="sm:w-4/6 w-5/6 container mx-auto mb-5">
         <Text>
           &copy; {blogFirstPostDate && startYear !== new Date().getFullYear() && startYear + ' - '}{' '}
           {new Date().getFullYear()} {blog.title}

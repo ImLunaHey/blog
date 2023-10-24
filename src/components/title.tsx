@@ -16,7 +16,7 @@ export const Title: React.FC<
 > = ({ children, size = 1 }) => {
   return createElement(
     `h${size}`,
-    { className: `text-${sizeToInverse[size]}xl font-extrabold text-white mt-5 mb-2` },
+    { className: `text-${(sizeToInverse[size] - 2) || 1}xl font-extrabold text-white mt-5 mb-2` },
     children,
   );
 };
