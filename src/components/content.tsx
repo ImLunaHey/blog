@@ -4,6 +4,7 @@ import { Link } from './link';
 import { Text } from './text';
 import { Code } from './code';
 import { Title } from './title';
+import { Image } from './image';
 
 export const Content: React.FC<{ children: string }> = ({ children }) => {
   return (
@@ -39,7 +40,6 @@ export const Content: React.FC<{ children: string }> = ({ children }) => {
               <Text {...props} />
             </li>
           );
-          // return <li className="text-gray-500 dark:text-gray-400" {...props} />;
         },
         strong({ node, ...props }) {
           return <strong className="font-bold text-black dark:text-white" {...props} />;
@@ -61,6 +61,10 @@ export const Content: React.FC<{ children: string }> = ({ children }) => {
         },
         h6({ node, ...props }) {
           return <Title size={6} {...props} />;
+        },
+        img({ node, ...props }) {
+          // @ts-expect-error
+          return <Image {...props} />;
         },
       }}
       rehypePlugins={[rehypeRaw]}

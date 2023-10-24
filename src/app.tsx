@@ -10,6 +10,7 @@ import { Text } from './components/text';
 import { Title } from './components/title';
 import { Link } from './components/link';
 import { Author } from './components/author';
+import { resolve } from 'path';
 
 const blogFirstPostDate =
   Object.values(posts).length > 0
@@ -86,4 +87,16 @@ app.get('/authors/:author', async ({ params: { author } }) => {
       <Author author={author} />
     </App>
   );
+});
+
+app.get('/assets/:type/:fileName', async ({ params: { type, fileName } }) => {
+  const filePath = resolve(`assets/images/${fileName}`);
+  if (!filePath.startsWith(resolve(import.meta.dir, '..')) || type !== 'images')
+    return (
+      <App>
+        <NotFound />
+      </App>
+    );
+
+  return new Response(Bun.file(filePath));
 });

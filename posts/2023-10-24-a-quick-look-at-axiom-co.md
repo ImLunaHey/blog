@@ -78,4 +78,4 @@ For more information and the most current pricing details, visit the [official A
 
 - [Axiom Documentation](https://axiom.co/docs)
 - [Community Discord](https://axiom.co/discord)
-- [Getting Started with Axiom: Tutorials and Guides](https://axiom.co/docs)
+- [Getting Started with Axiom: Tutorials and Guides](https://axiom.co/docs/getting-started-guide/getting-started)

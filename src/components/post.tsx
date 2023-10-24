@@ -16,11 +16,15 @@ export type PostProps = {
   categories: string[];
   content: string;
   authors: string[];
+  preview?: string;
 };
 
 export const Post: React.FC<PostProps> = (post) => {
   return (
     <>
+      <head>
+        <meta property="og:image" content={post.preview} />
+      </head>
       <main
         className="h-full w-full"
         style={{
