@@ -56,7 +56,12 @@ const App: React.FC<PropsWithChildren> = ({ children }) => (
           &copy; {blogFirstPostDate && startYear !== new Date().getFullYear() && startYear + ' - '}{' '}
           {new Date().getFullYear()} {blog.title}
         </Text>
-        <img src="https://v.fish.lgbt/pixel.gif?id=blog.fish.lgbt" />
+        <img
+          style={{
+            display: 'none',
+          }}
+          src="https://v.fish.lgbt/pixel.gif?id=blog.fish.lgbt"
+        />
       </footer>
     </body>
   </html>
