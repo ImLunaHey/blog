@@ -4,6 +4,7 @@ WORKDIR /app
 
 COPY src /app/src
 COPY posts /app/posts
+COPY assets /app/assets
 COPY bun.lockb package.json tsconfig.json /app/
 
 RUN apt-get update && apt-get install unzip
