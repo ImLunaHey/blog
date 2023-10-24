@@ -77,6 +77,17 @@ app.get('/', () => (
   </App>
 ));
 
+app.get('/robots.txt', () => {
+  return new Response(`
+    User-agent: *
+    Allow /
+  `, {
+    headers: {
+      'content-type': 'text/plain',
+    },
+  });
+});
+
 app.get('/posts/:slug', async ({ params: { slug } }) => {
   const post = posts[slug];
   if (!post)
