@@ -3,7 +3,7 @@ import { HtmlHTMLAttributes, PropsWithChildren } from 'react';
 export const Text: React.FC<PropsWithChildren<HtmlHTMLAttributes<HTMLParagraphElement> & { inline?: boolean }>> = ({
   children,
   inline = false,
-  className,
+  className = '',
   ...passthrough
 }) => {
   if (inline)
