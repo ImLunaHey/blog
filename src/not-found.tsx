@@ -1,5 +1,7 @@
+import { Text } from './components/text';
+
 export const NotFound = () => (
-    <div>
-        <h1>404 - Not Found!</h1>
-    </div>
+  <div>
+    <Text>404 - Not Found</Text>
+  </div>
 );
