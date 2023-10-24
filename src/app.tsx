@@ -31,6 +31,11 @@ const App: React.FC<PropsWithChildren> = ({ children }) => (
       <meta name="view-transition" content="same-origin" />
       <script src="https://cdn.tailwindcss.com" />
       <script src="https://fish.lgbt/assets/js/htmx.org@1.9.4.min.js"></script>
+      <style>{`
+        p + p {
+          margin-top:10px;
+        }        
+      `}</style>
     </head>
     <body className="h-full w-full bg-[#0e0c15]">
       <header

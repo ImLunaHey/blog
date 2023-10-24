@@ -37,7 +37,7 @@ export const Content: React.FC<{ children: string }> = ({ children }) => {
                   d="M1 5.917 5.724 10.5 15 1.5"
                 />
               </svg>
-              <Text {...props} />
+              <Text inline {...props} />
             </li>
           );
         },
