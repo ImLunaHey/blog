@@ -1,5 +1,5 @@
 export const blog = {
-  title: 'My Blog',
-  description: 'This is my blog',
+  title: 'Our Blog',
+  description: 'This is our blog',
   language: 'en',
 };
