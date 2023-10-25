@@ -3,6 +3,7 @@ import { Content } from './content';
 import { PostDate } from './post-date';
 import { AuthorBadge } from './author-badge';
 import { Text } from './text';
+import { Head } from '../context';
 
 export type PostProps = {
   title: string;
@@ -22,9 +23,9 @@ export type PostProps = {
 export const Post: React.FC<PostProps> = (post) => {
   return (
     <>
-      <head>
+      <Head>
         <meta property="og:image" content={post.preview} />
-      </head>
+      </Head>
       <div
         className="h-full w-full"
         style={{
