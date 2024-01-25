@@ -1,17 +1,20 @@
 import { HTMLAttributes } from 'react';
 
-export const Image: React.FC<HTMLAttributes<HTMLImageElement> & { src: string; alt?: string; lazy?: boolean }> = ({
-  src,
-  alt,
-  lazy = false,
-}) => {
+type ImageProps = HTMLAttributes<HTMLImageElement> & { src: string; alt?: string; lazy?: boolean };
+
+export const Image = ({ src, alt, lazy = false }: ImageProps) => {
+  const image = (
+    <img loading={lazy ? 'lazy' : 'eager'} className="max-h-[250px] w-fit rounded-lg object-contain" src={src} alt={alt} />
+  );
   if (!alt) {
-    return <img loading={lazy ? 'lazy' : 'eager'} className="h-auto max-w-full rounded-lg" src={src} />;
+    return image;
   }
 
   return (
     <figure>
-      <img loading={lazy ? 'lazy' : 'eager'} className="h-auto max-w-full rounded-lg" src={src} alt={alt} />;
+      <a href={src} target="_blank">
+        {image}
+      </a>
       <figcaption className="mt-2 text-sm text-center text-gray-500 dark:text-gray-400">{alt}</figcaption>
     </figure>
   );

@@ -6,7 +6,11 @@ import { Code } from './code';
 import { Title } from './title';
 import { Image } from './image';
 
-export const Content: React.FC<{ children: string }> = ({ children }) => {
+type ContentProps = {
+  children: string;
+};
+
+export const Content = ({ children }: ContentProps) => {
   return (
     <Markdown
       components={{
@@ -22,19 +26,16 @@ export const Content: React.FC<{ children: string }> = ({ children }) => {
         li({ node, ...props }) {
           return (
             <li className="flex items-center space-x-3">
+              {/* Hyphen mark */}
               <svg
-                className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 16 12"
+                className="w-[20px] h-[20px] min-w-[20px] min-h-[20px] text-gray-400 dark:text-gray-500"
+                viewBox="0 0 20 20"
+                fill="currentColor"
               >
                 <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M1 5.917 5.724 10.5 15 1.5"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M3.5 7.5a1 1 0 011-1h11a1 1 0 110 2h-11a1 1 0 01-1-1zm0 5a1 1 0 011-1h11a1 1 0 110 2h-11a1 1 0 01-1-1z"
                 />
               </svg>
               <Text inline {...props} />
@@ -65,6 +66,13 @@ export const Content: React.FC<{ children: string }> = ({ children }) => {
         img({ node, ...props }) {
           // @ts-expect-error
           return <Image {...props} />;
+        },
+        hgroup({ node, children, ...props }) {
+          return (
+            <div className="flex flex-row gap-2" {...props}>
+              <Content>{children as string}</Content>
+            </div>
+          );
         },
       }}
       rehypePlugins={[rehypeRaw]}
