@@ -1,5 +1,9 @@
 import { Text } from './text';
 
-export const Author: React.FC<{ author: string }> = ({ author }) => {
+type AuthorProps = {
+  author: string;
+};
+
+export const Author = ({ author }: AuthorProps) => {
   return <Text>Coming soon...</Text>;
 };

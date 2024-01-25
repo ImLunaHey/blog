@@ -104,7 +104,19 @@ app.get('/posts/:slug', async ({ params: { slug } }) => {
   );
 });
 
-app.get('/authors/:author', async ({ params: { author } }) => {
+app.get('/authors/:author', async (request) => {
+  const author = request.params.author;
+
+  // Redirect to twitter
+  if (author.toLowerCase() === 'imlunahey') {
+    return new Response(null, {
+      status: 301,
+      headers: {
+        location: 'https://twitter.com/imlunahey',
+      },
+    });
+  }
+
   return (
     <App>
       <Author author={author} />
