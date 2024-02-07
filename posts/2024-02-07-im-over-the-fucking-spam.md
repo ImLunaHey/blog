@@ -16,12 +16,14 @@ authors: ['ImLunaHey']
 
 docker if you're seeing this please for the love of god fix this.
 
-i want you to open this link https://www.google.com/search?q=free+download+link+pdf+site%3Ahub.docker.com and tell me how many spam accounts you can find in 60s. last time i did this for an hour i found 100s if not not 1000s of accounts all with 100s of repos each.
+i want you to open [this link](https://www.google.com/search?q=free+download+link+pdf+site%3Ahub.docker.com) and tell me how many spam accounts you can find in 60s. last time i did this for an hour i found 100s if not not 1000s of accounts all with 100s of repos each.
 
 it doesnt take a genuis to work out that these are spam.
 
+<hgroup>
 ![readme of a spam repo from docker hub](/assets/images/dockerhub-spam-problem-1.png)
 ![user profile of a spammer on docker hub](/assets/images/dockerhub-spam-problem-2.png)
+</hgroup>
 
 here are some random spam accounts that havent been banned.
 
