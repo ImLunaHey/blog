@@ -19,7 +19,7 @@ export type PostProps = {
   preview?: string;
 };
 
-export const Post: React.FC<PostProps> = (post) => {
+export const Post = (post: PostProps) => {
   return (
     <>
       <head>

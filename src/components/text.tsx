@@ -1,11 +1,8 @@
-import { HtmlHTMLAttributes, PropsWithChildren } from 'react';
+import { HtmlHTMLAttributes } from 'react';
 
-export const Text: React.FC<PropsWithChildren<HtmlHTMLAttributes<HTMLParagraphElement> & { inline?: boolean }>> = ({
-  children,
-  inline = false,
-  className = '',
-  ...passthrough
-}) => {
+type TextProps = HtmlHTMLAttributes<HTMLParagraphElement> & { children: React.ReactNode; inline?: boolean };
+
+export const Text = ({ children, inline = false, className = '', ...passthrough }: TextProps) => {
   if (inline)
     return (
       <span className={'text-gray-500 dark:text-gray-400 ' + className} {...passthrough}>

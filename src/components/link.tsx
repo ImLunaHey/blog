@@ -1,10 +1,8 @@
-import { PropsWithChildren } from 'react';
+type LinkProps = { children: React.ReactNode; href?: string; external?: boolean; underline?: boolean };
 
-type LinkProps = PropsWithChildren<{ href?: string; external?: boolean; underline?: boolean }>;
-
-export const Link: React.FC<LinkProps> = ({ href, children, external = false, underline = true, ...passthrough }) => {
+export const Link = ({ children, href, external = false, underline = true, ...passthrough }: LinkProps) => {
   // Links to outside websites
-  if (external)
+  if (external) {
     return (
       <a
         href={href}
@@ -18,6 +16,7 @@ export const Link: React.FC<LinkProps> = ({ href, children, external = false, un
         {children}
       </a>
     );
+  }
 
   // Internal links
   return (

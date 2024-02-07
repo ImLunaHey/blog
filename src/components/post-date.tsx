@@ -1,7 +1,11 @@
 import { blog } from '../config';
 import { Text } from './text';
 
-export const PostDate: React.FC<{ date: Date }> = ({ date }) => {
+type PostDateProps = {
+  date: Date;
+};
+
+export const PostDate = ({ date }: PostDateProps) => {
   return (
     <Text
       inline

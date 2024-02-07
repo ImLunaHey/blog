@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React from 'react';
 import { Application } from 'xirelta';
 import { Home } from './components/home';
 import { posts } from './posts';
@@ -21,7 +21,11 @@ const blogFirstPostDate =
 
 const startYear = blogFirstPostDate ? new Date(blogFirstPostDate).getFullYear() : null;
 
-const App: React.FC<PropsWithChildren> = ({ children }) => (
+type AppProps = {
+  children: React.ReactNode;
+};
+
+const App = ({ children }: AppProps) => (
   <html lang={blog.language}>
     <head>
       <title>{blog.title}</title>
