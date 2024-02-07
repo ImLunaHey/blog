@@ -15,9 +15,11 @@ export const Content = ({ children }: ContentProps) => {
     <Markdown
       components={{
         a({ node, ...props }) {
+          // @ts-expect-error
           return <Link external {...props} />;
         },
         p({ node, ...props }) {
+          // @ts-expect-error
           return <Text {...props} />;
         },
         code(props) {
@@ -38,6 +40,7 @@ export const Content = ({ children }: ContentProps) => {
                   d="M3.5 7.5a1 1 0 011-1h11a1 1 0 110 2h-11a1 1 0 01-1-1zm0 5a1 1 0 011-1h11a1 1 0 110 2h-11a1 1 0 01-1-1z"
                 />
               </svg>
+              {/* @ts-expect-error */}
               <Text inline {...props} />
             </li>
           );
@@ -46,21 +49,27 @@ export const Content = ({ children }: ContentProps) => {
           return <strong className="font-bold text-black dark:text-white" {...props} />;
         },
         h1({ node, ...props }) {
+          // @ts-expect-error
           return <Title size={1} {...props} />;
         },
         h2({ node, ...props }) {
+          // @ts-expect-error
           return <Title size={2} {...props} />;
         },
         h3({ node, ...props }) {
+          // @ts-expect-error
           return <Title size={3} {...props} />;
         },
         h4({ node, ...props }) {
+          // @ts-expect-error
           return <Title size={4} {...props} />;
         },
         h5({ node, ...props }) {
+          // @ts-expect-error
           return <Title size={5} {...props} />;
         },
         h6({ node, ...props }) {
+          // @ts-expect-error
           return <Title size={6} {...props} />;
         },
         img({ node, ...props }) {
@@ -69,7 +78,7 @@ export const Content = ({ children }: ContentProps) => {
         },
         hgroup({ node, children, ...props }) {
           return (
-            <div className="flex flex-row gap-2" {...props}>
+            <div className="flex flex-row gap-2 justify-between" {...props}>
               <Content>{children as string}</Content>
             </div>
           );
