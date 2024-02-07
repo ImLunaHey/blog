@@ -4,15 +4,21 @@ type ImageProps = HTMLAttributes<HTMLImageElement> & { src: string; alt?: string
 
 export const Image = ({ src, alt, lazy = false }: ImageProps) => {
   const image = (
-    <img loading={lazy ? 'lazy' : 'eager'} className="max-h-[250px] w-fit rounded-lg object-contain" src={src} alt={alt} />
+    <img
+      loading={lazy ? 'lazy' : 'eager'}
+      className="max-h-[250px] w-fit rounded-lg object-contain justify-self-center	"
+      src={src}
+      alt={alt}
+    />
   );
+
   if (!alt) {
     return image;
   }
 
   return (
-    <figure>
-      <a href={src} target="_blank">
+    <figure className="flex items-center">
+      <a href={src} target="_blank" className="grid">
         {image}
       </a>
       <figcaption className="mt-2 text-sm text-center text-gray-500 dark:text-gray-400">{alt}</figcaption>
