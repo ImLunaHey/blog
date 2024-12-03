@@ -37,7 +37,7 @@ const PostEntries = () => {
         {data?.map((entry) => (
           <li key={entry.uri}>
             <h2>
-              <a href={`/post?uri=${entry.uri}`}>{entry.value.title}</a>
+              <a href={`/post/${entry.uri.split('/').pop()}`}>{entry.value.title}</a>
             </h2>
           </li>
         ))}

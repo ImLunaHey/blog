@@ -7,12 +7,11 @@ const agent = new BskyAgent({
   service: 'https://bsky.social',
 });
 
-const useBlogEntry = (uri: string | null) => {
-  const rkey = uri?.split('/').pop();
+const useBlogEntry = (rkey: string | undefined) => {
   const query = useQuery({
-    queryKey: ['post', uri],
+    queryKey: ['post', rkey],
     queryFn: async () => {
-      if (!uri || !rkey) return null;
+      if (!rkey) return null;
 
       const response = await agent.com.atproto.repo.getRecord({
         repo: 'did:plc:k6acu4chiwkixvdedcmdgmal',
@@ -57,8 +56,8 @@ const useBlogEntryComments = (uri: string | null | undefined) => {
 };
 
 const PostEntry = () => {
-  const uri = new URLSearchParams(window.location.search).get('uri');
-  const { data: post, isLoading: isLoadingPost, isError: isErrorPost, error: errorPost } = useBlogEntry(uri);
+  const rkey = window.location.pathname.split('/').pop();
+  const { data: post, isLoading: isLoadingPost, isError: isErrorPost, error: errorPost } = useBlogEntry(rkey);
   const {
     data: comments,
     isLoading: isLoadingComments,

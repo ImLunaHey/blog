@@ -1,23 +1,11 @@
-FROM node:lts-slim as runtime
+FROM node:lts AS build
 WORKDIR /app
-
-# Ensure that both node_modules and package-lock.json are removed.
-COPY package.json .
-RUN rm -rf node_modules package-lock.json
-
-# Perform a fresh installation of npm dependencies.
+COPY package*.json ./
 RUN npm install
-
-# Copy the rest of your application files.
 COPY . .
-
-# Build your application.
 RUN npm run build
 
-# Set environment variables and expose the appropriate port.
-ENV HOST=0.0.0.0
-ENV PORT=3000
-EXPOSE 3000
-
-# Define the command to run your application.
-CMD node ./dist/server/entry.mjs
+FROM nginx:alpine AS runtime
+COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 8080

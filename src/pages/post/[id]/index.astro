@@ -1,5 +1,31 @@
 ---
-import { Post } from '../../components/post';
+import { Post } from '../../../components/post';
+import type { BlogEntry } from '../../../types/blog-entry';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const response = await fetch(
+    'https://bsky.social/xrpc/com.atproto.repo.listRecords?' +
+      new URLSearchParams({
+        repo: 'did:plc:k6acu4chiwkixvdedcmdgmal',
+        collection: 'com.whtwnd.blog.entry',
+      }).toString(),
+    {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+      },
+      cache: 'no-store',
+    },
+  ).then((response) => response.json());
+
+  return (response.records as BlogEntry[])
+    .filter((entry) => entry.value.visibility === 'public')
+    .map((entry) => ({
+      params: { id: entry.uri.split('/').pop() },
+    }));
+}
 ---
 
 <html lang="en">
